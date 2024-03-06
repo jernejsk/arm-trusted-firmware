@@ -18,5 +18,5 @@ ifeq (${SUNXI_PSCI_USE_SCPI}, 1)
     $(error "H616 does not support SCPI PSCI ops")
 endif
 
-BL31_SOURCES		+=	drivers/allwinner/axp/axp805.c		\
+BL31_SOURCES		+=	drivers/allwinner/axp/axp858.c		\
 				drivers/allwinner/sunxi_rsb.c		\
