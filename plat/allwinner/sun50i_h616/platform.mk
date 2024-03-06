@@ -19,7 +19,7 @@ ifeq (${SUNXI_PSCI_USE_SCPI}, 1)
 endif
 
 BL31_SOURCES		+=	common/fdt_wrappers.c			\
-				drivers/allwinner/axp/axp805.c		\
+				drivers/allwinner/axp/axp858.c		\
 				drivers/allwinner/sunxi_rsb.c		\
 				drivers/mentor/i2c/mi2cv.c		\
 				${AW_PLAT}/${PLAT}/sunxi_h616_dtb.c

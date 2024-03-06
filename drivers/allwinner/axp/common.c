@@ -198,6 +198,8 @@ void axp_setup_regulators(const void *fdt)
 			axp_setbits(0x12, BIT(7));
 		if (axp_chip_id == AXP805_CHIP_ID)
 			axp_setbits(0x11, BIT(7));
+		if (axp_chip_id == AXP858_CHIP_ID)
+			axp_setbits(0x12, BIT(7));
 	}
 }
 #endif	/* SUNXI_SETUP_REGULATORS */
