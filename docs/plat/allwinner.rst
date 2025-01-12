@@ -27,6 +27,8 @@ There is one build target per supported SoC:
 +------+-------------------+
 | R329 | sun50i_r329       |
 +------+-------------------+
+| A523 | sun55i_a523       |
++------+-------------------+
 
 To build with the default settings for a particular SoC:
 
