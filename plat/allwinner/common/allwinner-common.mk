@@ -100,6 +100,8 @@ SEPARATE_CODE_AND_RODATA	:=	1
 # BL31 gets loaded alongside BL33 (U-Boot) by U-Boot's SPL
 RESET_TO_BL31			:=	1
 
-# Most Allwinner SoCs have 4 cores, but not all
-PLATFORM_MAX_CPUS_PER_CLUSTER	?=	4
-$(eval $(call add_define,PLATFORM_MAX_CPUS_PER_CLUSTER))
+# Most Allwinner SoCs have four cores, but not all. A platform that differs
+# says so before including this file: the value is baked into a define right
+# here, so a later assignment would never reach the code.
+SUNXI_CPU_COUNT			?=	4
+$(eval $(call add_define,SUNXI_CPU_COUNT))

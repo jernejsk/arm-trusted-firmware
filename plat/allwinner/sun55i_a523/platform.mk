@@ -8,8 +8,8 @@
 ARM_ARCH_MAJOR := 8
 ARM_ARCH_MINOR := 2
 
-# There are 8 cores in 1 cluster
-PLATFORM_MAX_CPUS_PER_CLUSTER := 8
+# There are eight cores
+SUNXI_CPU_COUNT := 8
 
 SUNXI_SETUP_REGULATORS := 0
 

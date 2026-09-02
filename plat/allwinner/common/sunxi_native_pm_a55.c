@@ -85,7 +85,7 @@ static void sunxi_system_off(void)
 
 	/* Turn off all CPUs */
 	for (cluster = 0; cluster < PLATFORM_CLUSTER_COUNT; ++cluster) {
-		for (core = 0; core < PLATFORM_MAX_CPUS_PER_CLUSTER; ++core) {
+		for (core = 0; core < PLATFORM_CORE_COUNT; ++core) {
 			u_register_t mpidr = (cluster << MPIDR_AFF2_SHIFT) |
 					     (core    << MPIDR_AFF1_SHIFT) |
 					     BIT(24) | BIT(31);
