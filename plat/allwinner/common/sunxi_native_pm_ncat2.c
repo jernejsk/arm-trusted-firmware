@@ -18,7 +18,6 @@
 
 #define SUNXI_WDOG0_SRST_REG		(SUNXI_R_WDOG_BASE + 0x0008)
 
-#define SUNXI_INITARCH_REG(n)		(SUNXI_CPUCFG_BASE + 0x0020 + (n) * 4)
 #define HOTPLUG_CONTROL_REG(n)		(SUNXI_R_CPUCFG_BASE + 0x200 + (n) * 4)
 #define HOTPLUG_POWERMODE_REG(n)	(SUNXI_R_CPUCFG_BASE + 0x220 + (n) * 4)
 #define PPU_PWSR(n)			(SUNXI_R_CPUCFG_BASE + (n) * 0x1000 + 0x1008)
@@ -30,8 +29,6 @@
 #define POWER_ON			BIT(0)
 
 #define HOTPLUG_EN			BIT(0)
-
-#define AARCH64				BIT(0)
 
 static void sunxi_cpu_off(u_register_t mpidr)
 {
@@ -46,7 +43,7 @@ static int sunxi_pwr_domain_on(u_register_t mpidr)
 {
 	unsigned int core = MPIDR_AFFLVL1_VAL(mpidr);
 
-	mmio_setbits_32(SUNXI_INITARCH_REG(core), AARCH64);
+	mmio_setbits_32(SUNXI_CPU_INITARCH_REG(core), SUNXI_CPU_INITARCH_AA64);
 
 	while ((mmio_read_32(PPU_PWSR(core + 1)) & 0xf) != STATE_OFF)
 		;
